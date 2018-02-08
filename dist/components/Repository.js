@@ -336,15 +336,15 @@ var Repository = function (_Requestable) {
       key: 'createBlob',
       value: function createBlob(content, cb) {
         //   console.log('called')
-         var postBody = this._getContentObject(content);
-        // var postBody
-        // console.log('typeof content', typeof content)
-        // if (typeof content === 'object') {
-        //     console.log('github RFepository: object')
-        //     postBody = content;
-        // } else {
-        //     postBody = this._getContentObject(content);
-        // }
+        //  var postBody = this._getContentObject(content);
+        var postBody
+        console.log('typeof content', typeof content)
+        if (typeof content === 'object') {
+            console.log('github RFepository: object')
+            postBody = content;
+        } else {
+            postBody = this._getContentObject(content);
+        }
 
          log('sending content', postBody);
          return this._request('POST', '/repos/' + this.__fullname + '/git/blobs', postBody, cb);
