@@ -338,9 +338,7 @@ var Repository = function (_Requestable) {
         //   console.log('called')
         //  var postBody = this._getContentObject(content);
         var postBody
-        console.log('typeof content', typeof content)
         if (typeof content === 'object') {
-            console.log('github RFepository: object')
             postBody = content;
         } else {
             postBody = this._getContentObject(content);
